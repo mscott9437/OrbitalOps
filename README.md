@@ -440,6 +440,8 @@ OrbitalOps is being developed as a contribution toward that future.
 
 ### 🌌 Building the operational intelligence systems that may help humanity navigate worlds beyond our imagination.
 
-## License
+---
 
-MIT
+# 📜 License
+
+GNU Affero General Public License (AGPL)
