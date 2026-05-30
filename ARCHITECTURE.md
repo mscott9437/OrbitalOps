@@ -1,0 +1,3 @@
+# Architecture
+
+Canonical runtime architecture.

@@ -1,0 +1,6 @@
+baseURL = 'https://mscott9437.github.io/orbitalops/'
+title = 'OrbitalOps'
+
+[languages]
+  [languages.en]
+    label = 'English'
