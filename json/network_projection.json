@@ -1,0 +1,274 @@
+{
+"projection_type": "network",
+"widget_tree": {
+"root": {
+"type": "panel",
+"children": [
+
+    {
+      "type": "header",
+      "title": "ORBITALOPS NETWORK COMMAND CENTER"
+    },
+
+    {
+      "type": "metric_strip",
+      "metrics": [
+        { "label": "NETWORK HEALTH", "value": "100%" },
+        { "label": "CONNECTIONS", "value": "0" },
+        { "label": "PEERS", "value": "0" },
+        { "label": "ROUTES", "value": "0" },
+        { "label": "AVAILABILITY", "value": "100%" },
+        { "label": "TRANSPORT", "value": "ONLINE" }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "NETWORK OVERVIEW"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "network": {
+              "connections": 0,
+              "availability": 1.0,
+              "peers": [],
+              "routes": [],
+              "channels": [],
+              "state": "active"
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "PEER REGISTRY"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "local_peer": {
+              "id": "entity-0000",
+              "name": "root",
+              "role": "primary",
+              "status": "connected"
+            },
+            "remote_peers": []
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "ROUTE TABLE"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Source","Destination","Latency","Status"],
+            ["root","root","0 ms","active"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "CHANNEL MANAGEMENT"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "channels": [
+              {
+                "id": "channel-0",
+                "type": "internal",
+                "state": "active",
+                "bandwidth": "unlimited"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "SIGNAL TRANSPORT"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "signals": [
+              {
+                "id": "sig-0",
+                "source": "root",
+                "target": "root",
+                "direction": "internal",
+                "state": "idle"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "TRAFFIC ANALYTICS"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Metric","Value"],
+            ["Ingress","0"],
+            ["Egress","0"],
+            ["Packets","0"],
+            ["Errors","0"],
+            ["Drops","0"],
+            ["Retries","0"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "BANDWIDTH UTILIZATION"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "current_bandwidth": 0,
+            "peak_bandwidth": 0,
+            "average_bandwidth": 0,
+            "utilization": 0,
+            "capacity": 100
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "TOPOLOGY CONNECTIVITY"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "nodes": 1,
+            "edges": 1,
+            "degree": 0,
+            "diameter": 0,
+            "density": 0,
+            "connectivity": "stable"
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "NETWORK EVENTS"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Time","Event","Severity"],
+            ["0","startup","info"],
+            ["1","network_initialize","info"],
+            ["2","channel_online","info"],
+            ["3","transport_ready","info"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "NETWORK SECURITY"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "security_state": "secure",
+            "active_sessions": 1,
+            "blocked_routes": 0,
+            "invalid_packets": 0,
+            "trust_score": 1.0
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "NETWORK SNAPSHOT"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "network": {
+              "connections": 0,
+              "availability": 1.0
+            },
+            "telemetry": {
+              "ingress": 0,
+              "egress": 0,
+              "packets": 0
+            },
+            "topology": {
+              "nodes": 1,
+              "edges": 1
+            },
+            "continuity": {
+              "generation": 0,
+              "checkpoint": 0
+            },
+            "status": "healthy"
+          }
+        }
+      ]
+    }
+
+  ]
+}
+
+}
+}

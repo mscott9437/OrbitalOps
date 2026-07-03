@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Nori Primitive Tensor Demo</title>
+
+<style>
+
+body {
+    background: #111;
+    color: #eee;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#app {
+    width: 340px;
+    background: #1e1e1e;
+    border: 4px solid #444;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 0 30px rgba(0,0,0,0.5);
+}
+
+#screen {
+    background: #9bbc0f;
+    color: #0f380f;
+    border-radius: 10px;
+    padding: 16px;
+    min-height: 320px;
+}
+
+#pet {
+    font-size: 48px;
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 10px;
+}
+
+#mood {
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#behavior {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.stat {
+    margin: 4px 0;
+}
+
+.bar {
+    width: 100%;
+    height: 12px;
+    background: rgba(0,0,0,0.2);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 2px;
+    margin-bottom: 8px;
+}
+
+.fill {
+    height: 100%;
+    background: #0f380f;
+    width: 50%;
+}
+
+button {
+    width: 100%;
+    margin-top: 8px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #555;
+}
+
+#log {
+    margin-top: 12px;
+    font-size: 12px;
+    height: 50px;
+    overflow-y: auto;
+    background: rgba(0,0,0,0.1);
+    padding: 6px;
+    border-radius: 6px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="app">
+
+    <div id="screen">
+
+        <div id="pet">◕‿◕</div>
+
+        <div id="mood"></div>
+
+        <div id="behavior"></div>
+
+        <hr>
+
+        <div class="stat">
+            Trust
+            <div class="bar">
+                <div id="trustBar" class="fill"></div>
+            </div>
+        </div>
+
+        <div class="stat">
+            Energy
+            <div class="bar">
+                <div id="energyBar" class="fill"></div>
+            </div>
+        </div>
+
+        <div class="stat">
+            Curiosity
+            <div class="bar">
+                <div id="curiosityBar" class="fill"></div>
+            </div>
+        </div>
+
+        <div class="stat">
+            Loneliness
+            <div class="bar">
+                <div id="lonelinessBar" class="fill"></div>
+            </div>
+        </div>
+
+        <div id="log"></div>
+
+    </div>
+
+    <button onclick="feed()">Feed</button>
+    <button onclick="play()">Play</button>
+    <button onclick="sleepPet()">Sleep</button>
+
+</div>
+
+<script>
+
+// =====================================================
+// PRIMITIVE TENSOR STATE
+// =====================================================
+
+// [trust, energy, curiosity, loneliness]
+
+let S = [
+    0.5,
+    0.7,
+    0.6,
+    0.3
+];
+
+// =====================================================
+// BEHAVIOR WEIGHT MATRIX
+// =====================================================
+
+// 0 = sleep
+// 1 = play
+// 2 = explore
+// 3 = seek attention
+
+const W = [
+
+    // trust energy curiosity loneliness
+
+    [ 0.1, -1.0, -0.2,  0.2 ],
+    [ 0.6,  0.8,  0.3, -0.2 ],
+    [ 0.2,  0.3,  1.2, -0.1 ],
+    [ 0.8, -0.3,  0.2,  1.3 ]
+];
+
+const behaviorNames = [
+    "sleeping... zZz",
+    "playing happily!",
+    "exploring curiously!",
+    "wants attention..."
+];
+
+// =====================================================
+// PRIMITIVE OPS
+// =====================================================
+
+function dot(a, b) {
+
+    let sum = 0;
+
+    for(let i = 0; i < a.length; i++) {
+        sum += a[i] * b[i];
+    }
+
+    return sum;
+}
+
+function clamp(x, min=0, max=1) {
+    return Math.max(min, Math.min(max, x));
+}
+
+// =====================================================
+// BEHAVIOR SELECTION
+// =====================================================
+
+function chooseBehavior() {
+
+    let best = 0;
+    let bestScore = -Infinity;
+
+    for(let i = 0; i < W.length; i++) {
+
+        let score = dot(W[i], S);
+
+        if(score > bestScore) {
+            bestScore = score;
+            best = i;
+        }
+    }
+
+    return best;
+}
+
+// =====================================================
+// CONTINUOUS EVOLUTION
+// =====================================================
+
+function evolve() {
+
+    // passive emotional drift
+
+    S[1] -= 0.01;
+    S[3] += 0.01;
+
+    // curiosity oscillation
+
+    S[2] += (Math.random() - 0.5) * 0.05;
+
+    // trust slowly decays
+
+    S[0] -= 0.002;
+
+    // clamp
+
+    for(let i = 0; i < S.length; i++) {
+        S[i] = clamp(S[i]);
+    }
+
+    render();
+}
+
+// =====================================================
+// USER INTERACTIONS
+// =====================================================
+
+function feed() {
+
+    S[1] += 0.2;
+    S[0] += 0.05;
+
+    log("Nori enjoyed the food.");
+
+    render();
+}
+
+function play() {
+
+    S[0] += 0.1;
+    S[2] += 0.2;
+    S[1] -= 0.1;
+    S[3] -= 0.2;
+
+    log("Nori played with you.");
+
+    render();
+}
+
+function sleepPet() {
+
+    S[1] += 0.4;
+    S[3] += 0.05;
+
+    log("Nori feels rested.");
+
+    render();
+}
+
+// =====================================================
+// LOGGING
+// =====================================================
+
+function log(text) {
+
+    const el = document.getElementById("log");
+
+    const line = document.createElement("div");
+
+    line.innerText = "> " + text;
+
+    el.prepend(line);
+
+    while(el.children.length > 4) {
+        el.removeChild(el.lastChild);
+    }
+}
+
+// =====================================================
+// RENDERING
+// =====================================================
+
+function render() {
+
+    let behavior = chooseBehavior();
+
+    let mood = "calm";
+
+    if(S[3] > 0.7) mood = "lonely";
+    if(S[1] < 0.2) mood = "sleepy";
+    if(S[2] > 0.8) mood = "curious";
+    if(S[0] > 0.8) mood = "attached";
+
+    // =================================================
+    // GRAPHICAL FACE RENDERING
+    // =================================================
+
+    let face = "◕‿◕";
+
+    if(mood === "sleepy") face = "－_－ zz";
+    if(mood === "lonely") face = "(╥﹏╥)";
+    if(mood === "curious") face = "☉‿☉";
+    if(mood === "attached") face = "(ᵔ◡ᵔ)";
+
+    document.getElementById("pet").innerText = face;
+
+    // =================================================
+    // TEXT
+    // =================================================
+
+    document.getElementById("mood").innerText =
+        "Mood: " + mood;
+
+    document.getElementById("behavior").innerText =
+        "Behavior: " + behaviorNames[behavior];
+
+    // =================================================
+    // GRAPHICAL BARS
+    // =================================================
+
+    document.getElementById("trustBar").style.width =
+        (S[0] * 100) + "%";
+
+    document.getElementById("energyBar").style.width =
+        (S[1] * 100) + "%";
+
+    document.getElementById("curiosityBar").style.width =
+        (S[2] * 100) + "%";
+
+    document.getElementById("lonelinessBar").style.width =
+        (S[3] * 100) + "%";
+}
+
+// =====================================================
+// MAIN LOOP
+// =====================================================
+
+setInterval(evolve, 1000);
+
+render();
+
+</script>
+
+</body>
+</html>

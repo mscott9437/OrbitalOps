@@ -1,0 +1,241 @@
+{
+  "projection_type": "debug",
+  "widget_tree": {
+    "root": {
+      "type": "panel",
+      "children": [
+
+        {
+          "type": "header",
+          "title": "ORBITALOPS DEBUG CONSOLE"
+        },
+
+        {
+          "type": "metric_strip",
+          "metrics": [
+            { "label": "RUNTIME", "value": "ONLINE" },
+            { "label": "TRACE DEPTH", "value": "128" },
+            { "label": "ACTIVE EVENTS", "value": "42" },
+            { "label": "ERRORS", "value": "0" },
+            { "label": "WARNINGS", "value": "3" },
+            { "label": "CHECKPOINTS", "value": "16" }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "RUNTIME STATUS"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "runtime": "orbitalops",
+                "state": "online",
+                "phase": "semantic_execution",
+                "uptime_ticks": 100245,
+                "active_projection": "debug",
+                "active_route": "/debug",
+                "render_cycle": 2048
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "TRACE PIPELINE"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "trace_stack": [
+                  "runtime_boot",
+                  "projection_load",
+                  "route_resolution",
+                  "widget_expansion",
+                  "render_commit"
+                ],
+                "active_stage": "render_commit",
+                "depth": 128,
+                "branch_count": 7
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "EVENT STREAM"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Time","Type","Severity"],
+                ["12:01:10","ROUTE_LOAD","INFO"],
+                ["12:01:11","PROJECTION_BIND","INFO"],
+                ["12:01:12","SCHEMA_VALIDATE","INFO"],
+                ["12:01:13","TRACE_UPDATE","INFO"],
+                ["12:01:14","RENDER_COMMIT","INFO"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "ERROR REGISTRY"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "errors": [],
+                "warnings": [
+                  {
+                    "id": "warn-001",
+                    "type": "projection_density",
+                    "severity": "low"
+                  },
+                  {
+                    "id": "warn-002",
+                    "type": "telemetry_missing",
+                    "severity": "low"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "CHECKPOINT MANAGER"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "active_checkpoint": "cp-0016",
+                "total_checkpoints": 16,
+                "last_snapshot": "runtime_snapshot_0016",
+                "rollback_available": true,
+                "reconstruction_state": "verified"
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "SCHEMA INSPECTOR"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "schema_version": "2.0-ui-complete",
+                "panels": 32,
+                "routes": 18,
+                "widget_bindings": 164,
+                "semantic_commands": 96,
+                "event_handlers": 64
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "MUTATION ENGINE"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "active_mutations": 4,
+                "queued_mutations": 11,
+                "mutation_rules": [
+                  "random_walk",
+                  "projection_merge",
+                  "runtime_sync",
+                  "checkpoint_update"
+                ]
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "RENDERER DIAGNOSTICS"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Metric","Value"],
+                ["Panels Rendered","32"],
+                ["Widgets Rendered","184"],
+                ["DOM Nodes","4127"],
+                ["Frame Time","8 ms"],
+                ["Render Queue","0"],
+                ["Failed Widgets","0"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "DEBUG SNAPSHOT"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "identity": {
+                  "id": "entity-0000",
+                  "name": "root"
+                },
+                "continuity": {
+                  "generation": 16,
+                  "checkpoint": 16
+                },
+                "lineage": {
+                  "branches": 7,
+                  "merges": 3
+                },
+                "debug": {
+                  "warnings": 3,
+                  "errors": 0
+                }
+              }
+            }
+          ]
+        }
+
+      ]
+    }
+  }
+}

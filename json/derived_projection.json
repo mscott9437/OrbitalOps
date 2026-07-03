@@ -1,0 +1,404 @@
+{
+  "projection_type": "derived",
+  "widget_tree": {
+    "root": {
+      "type": "panel",
+      "id": "derived-root",
+      "role": "dashboard",
+
+      "children": [
+
+        {
+          "type": "header",
+          "title": "ORBITALOPS MISSION CONTROL"
+        },
+
+        {
+          "type": "metric_strip",
+          "id": "top-metrics",
+          "role": "status-strip",
+          "metrics": [
+            {
+              "label": "MISSION STATUS",
+              "value": "OPERATIONAL"
+            },
+            {
+              "label": "NETWORK",
+              "value": "ONLINE"
+            },
+            {
+              "label": "SECURITY",
+              "value": "SECURE"
+            },
+            {
+              "label": "UPTIME",
+              "value": "99.99%"
+            },
+            {
+              "label": "ANOMALIES",
+              "value": "1"
+            },
+            {
+              "label": "SATELLITES",
+              "value": "1248"
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "id": "mission-layout",
+          "role": "layout",
+
+          "children": [
+
+            {
+              "type": "panel",
+              "id": "left-sidebar",
+              "role": "sidebar-left",
+
+              "children": [
+
+                {
+                  "type": "panel",
+                  "id": "executive-report",
+                  "role": "summary",
+                  "children": [
+                    {
+                      "type": "header",
+                      "title": "EXECUTIVE SITUATION REPORT"
+                    },
+                    {
+                      "type": "table_view",
+                      "rows": [
+                        ["Metric","Value"],
+                        ["Network Health","98.7%"],
+                        ["Topology State","Stable"],
+                        ["Mission Readiness","High"],
+                        ["Signal Integrity","Excellent"],
+                        ["Threat Level","Low"],
+                        ["Active Alerts","1"]
+                      ]
+                    }
+                  ]
+                },
+
+                {
+                  "type": "panel",
+                  "id": "telemetry",
+                  "role": "telemetry",
+                  "children": [
+                    {
+                      "type": "header",
+                      "title": "TELEMETRY"
+                    },
+                    {
+                      "type": "table_view",
+                      "rows": [
+                        ["Parameter","Value"],
+                        ["Altitude","540 km"],
+                        ["Velocity","7.58 km/s"],
+                        ["Inclination","53.0"],
+                        ["Orbital Period","95.4 min"],
+                        ["Apogee","560 km"],
+                        ["Perigee","525 km"]
+                      ]
+                    }
+                  ]
+                },
+
+                {
+                  "type": "panel",
+                  "id": "network-status",
+                  "role": "network",
+                  "children": [
+                    {
+                      "type": "header",
+                      "title": "NETWORK STATUS"
+                    },
+                    {
+                      "type": "tree_view",
+                      "data": {
+                        "nodes": 1248,
+                        "gateways": 48,
+                        "ground_stations": 112,
+                        "mesh_state": "stable",
+                        "availability": "99.98%",
+                        "latency": "42 ms"
+                      }
+                    }
+                  ]
+                },
+
+                {
+                  "type": "panel",
+                  "id": "anomaly-summary",
+                  "role": "anomalies",
+                  "children": [
+                    {
+                      "type": "header",
+                      "title": "ANOMALY SUMMARY"
+                    },
+                    {
+                      "type": "table_view",
+                      "rows": [
+                        ["Severity","Count"],
+                        ["Critical","0"],
+                        ["Major","1"],
+                        ["Minor","3"],
+                        ["Warning","5"],
+                        ["Resolved","12"]
+                      ]
+                    }
+                  ]
+                }
+
+              ]
+            },
+
+            {
+              "type": "panel",
+              "id": "center-column",
+              "role": "center",
+
+              "children": [
+
+                {
+                  "type": "panel",
+                  "id": "mission-theater",
+                  "role": "primary",
+                  "children": [
+                    {
+                      "type": "header",
+                      "title": "MISSION THEATER"
+                    },
+                    {
+                      "type": "text",
+                      "text": "Primary mission visualization placeholder. Future executive-derived-visualization projection will replace this region with orbital globe, topology mesh, link overlays, anomaly overlays and sensor feeds."
+                    },
+                    {
+                      "type": "tree_view",
+                      "data": {
+                        "orbital_plane": "57.0",
+                        "satellites_in_view": 12,
+                        "active_links": 22,
+                        "network_state": "OPERATIONAL",
+                        "signal_quality": "EXCELLENT",
+                        "mission_phase": "ACTIVE"
+                      }
+                    }
+                  ]
+                },
+
+                {
+                  "type": "panel",
+                  "id": "data-flow",
+                  "role": "flow",
+                  "children": [
+                    {
+                      "type": "header",
+                      "title": "DATA FLOW"
+                    },
+                    {
+                      "type": "table_view",
+                      "rows": [
+                        ["Channel","Rate"],
+                        ["Uplink","220 Mbps"],
+                        ["Downlink","1.48 Gbps"],
+                        ["Inter-Satellite","4.8 Gbps"],
+                        ["Control","12 Mbps"],
+                        ["Payload","820 Mbps"]
+                      ]
+                    }
+                  ]
+                },
+
+                {
+                  "type": "panel",
+                  "id": "mission-objectives",
+                  "role": "objectives",
+                  "children": [
+                    {
+                      "type": "header",
+                      "title": "MISSION OBJECTIVES"
+                    },
+                    {
+                      "type": "tree_view",
+                      "data": {
+                        "objective_1": "Maintain Global Coverage",
+                        "objective_2": "Optimize Link Routing",
+                        "objective_3": "Minimize Latency",
+                        "objective_4": "Preserve Network Stability",
+                        "objective_5": "Detect Anomalies"
+                      }
+                    }
+                  ]
+                },
+
+                {
+                  "type": "panel",
+                  "id": "event-feed",
+                  "role": "events",
+                  "children": [
+                    {
+                      "type": "header",
+                      "title": "EVENT FEED"
+                    },
+                    {
+                      "type": "tree_view",
+                      "data": {
+                        "event_1": "Gateway synchronization completed",
+                        "event_2": "Orbital correction executed",
+                        "event_3": "Topology refresh completed",
+                        "event_4": "Telemetry stream validated",
+                        "event_5": "Mission status operational"
+                      }
+                    }
+                  ]
+                }
+
+              ]
+            },
+
+            {
+              "type": "panel",
+              "id": "right-sidebar",
+              "role": "sidebar-right",
+
+              "children": [
+
+                {
+                  "type": "panel",
+                  "id": "network-topology",
+                  "role": "topology",
+                  "children": [
+                    {
+                      "type": "header",
+                      "title": "NETWORK TOPOLOGY"
+                    },
+                    {
+                      "type": "tree_view",
+                      "data": {
+                        "total_nodes": 1248,
+                        "total_links": 21472,
+                        "regions": 24,
+                        "clusters": 96,
+                        "density": "91%",
+                        "focus_region": "North America"
+                      }
+                    }
+                  ]
+                },
+
+                {
+                  "type": "panel",
+                  "id": "link-analysis",
+                  "role": "analysis",
+                  "children": [
+                    {
+                      "type": "header",
+                      "title": "LINK ANALYSIS"
+                    },
+                    {
+                      "type": "table_view",
+                      "rows": [
+                        ["Metric","Value"],
+                        ["Active Links","22"],
+                        ["Degraded Links","2"],
+                        ["Offline Links","0"],
+                        ["Average Latency","42 ms"],
+                        ["Link Efficiency","91.7%"],
+                        ["Packet Success","99.98%"]
+                      ]
+                    }
+                  ]
+                },
+
+                {
+                  "type": "panel",
+                  "id": "environmental-data",
+                  "role": "environment",
+                  "children": [
+                    {
+                      "type": "header",
+                      "title": "ENVIRONMENTAL DATA"
+                    },
+                    {
+                      "type": "tree_view",
+                      "data": {
+                        "solar_flux": 128,
+                        "kp_index": 2.3,
+                        "radiation": "nominal",
+                        "space_weather": "quiet",
+                        "thermal_status": "stable"
+                      }
+                    }
+                  ]
+                },
+
+                {
+                  "type": "panel",
+                  "id": "system-diagnostics",
+                  "role": "diagnostics",
+                  "children": [
+                    {
+                      "type": "header",
+                      "title": "SYSTEM DIAGNOSTICS"
+                    },
+                    {
+                      "type": "table_view",
+                      "rows": [
+                        ["Subsystem","Status"],
+                        ["Propulsion","Nominal"],
+                        ["Communications","Nominal"],
+                        ["Power","Nominal"],
+                        ["Thermal","Nominal"],
+                        ["Navigation","Nominal"],
+                        ["Payload","Nominal"]
+                      ]
+                    }
+                  ]
+                }
+
+              ]
+            }
+
+          ]
+        },
+
+        {
+          "type": "metric_strip",
+          "id": "bottom-metrics",
+          "role": "resource-strip",
+          "metrics": [
+            {
+              "label": "CPU",
+              "value": "42%"
+            },
+            {
+              "label": "MEMORY",
+              "value": "58%"
+            },
+            {
+              "label": "GPU",
+              "value": "33%"
+            },
+            {
+              "label": "LATENCY",
+              "value": "42ms"
+            },
+            {
+              "label": "PACKET LOSS",
+              "value": "0.01%"
+            },
+            {
+              "label": "ENCRYPTION",
+              "value": "AES-256"
+            }
+          ]
+        }
+
+      ]
+    }
+  }
+}

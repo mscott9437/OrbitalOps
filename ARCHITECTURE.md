@@ -1,3 +1,0 @@
-# Architecture
-
-Canonical runtime architecture.

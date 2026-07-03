@@ -1,0 +1,61 @@
+{
+  "projection_type": "theatre",
+
+  "widget_tree": {
+    "root": {
+      "type": "panel",
+      "id": "theatre-root",
+      "role": "theatre",
+
+      "children": [
+
+        {
+          "type": "header",
+          "title": "ORBITALOPS THEATRE"
+        },
+
+        {
+          "type": "metric_strip",
+          "metrics": [
+            {
+              "label": "RENDER STATUS",
+              "value": "ACTIVE"
+            },
+            {
+              "label": "FPS",
+              "value": "60"
+            },
+            {
+              "label": "OBJECTS",
+              "value": "1248"
+            },
+            {
+              "label": "LINKS",
+              "value": "21472"
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "id": "theatre-canvas",
+          "role": "webgl-canvas",
+
+          "children": [
+            {
+              "type": "header",
+              "title": "MISSION THEATRE"
+            },
+
+            {
+              "type": "canvas_view",
+              "id": "theatre-canvas-container",
+              "canvas_id": "orbital-canvas"
+            }
+          ]
+        }
+
+      ]
+    }
+  }
+}

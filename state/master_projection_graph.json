@@ -1,0 +1,46 @@
+{
+  "projection_type": "orbitalops.master_projection",
+
+  "root": {
+    "id": "master_dashboard",
+
+    "children": [
+
+      "identity",
+      "runtime",
+      "lineage",
+      "mission",
+
+      "continuity",
+
+      "stable_memory",
+      "working_memory",
+
+      "network",
+
+      "fleet",
+
+      "relays",
+
+      "satellites",
+
+      "telemetry",
+
+      "topology",
+
+      "solar_event",
+
+      "anomalies",
+
+      "autonomous_response",
+
+      "event_feed",
+
+      "semantic_delta",
+
+      "output_contract",
+
+      "update_requirements"
+    ]
+  }
+}

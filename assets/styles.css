@@ -1,0 +1,83 @@
+
+/*
+
+display:flow-root;
+@media only screen and (min-width:35em){}
+
+*/
+
+html{
+   //color: #222;
+   font-size: 1em;
+   line-height: 1.4;
+   box-sizing: border-box;
+}
+
+*,*::before,*::after{
+   box-sizing: inherit;
+}
+
+body, pre, h1, h2, h3, h4, h5, h6, p, ul, form, fieldset, hr {
+   margin: 0;
+}
+
+body{
+   background-color: #000;
+   color: #fff;
+}
+
+ul, fieldset {
+   padding: 0;
+}
+
+ul {
+   list-style-type: none;
+}
+
+textarea {
+   resize: none;
+}
+
+iframe, fieldset {
+   border: 0;
+}
+
+button {
+   cursor: pointer;
+}
+
+pre{
+   font-family:monospace,monospace;
+   font-size:1em;
+}
+
+hr{
+   height:1px;
+   background-color:#000;
+   border-color: black;
+   border-style: solid;
+   border-top:1px solid #fff;
+   border-bottom:1px solid #fff;
+}
+
+/* background-color:rgba(112,128,144,0.95); */
+
+a:hover, a:active {
+   background-color: #f55;
+}
+
+.x-hide {
+   display: none !important;
+}
+
+#honey0,label[for=honey]{
+
+  display:none !important;
+
+}
+
+.active{
+
+  background-color:rgba(255,255,255,0.5);
+
+}

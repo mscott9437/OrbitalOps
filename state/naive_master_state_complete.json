@@ -1,0 +1,405 @@
+{
+  "identity": {
+    "id": "entity-0000",
+    "name": "root",
+    "type": "runtime",
+    "subtype": "master",
+    "version": "0.0.1",
+    "instance": "primary",
+    "namespace": "global",
+    "owner": "system",
+    "tags": [],
+    "classification": "internal",
+    "status": "active"
+  },
+  "simulation": {
+    "id": "sim-0000",
+    "name": "default",
+    "scenario": "baseline",
+    "environment": "synthetic",
+    "phase": "initialize",
+    "state": "running",
+    "seed": 0,
+    "cycle": 0,
+    "iteration": 0
+  },
+  "time": {
+    "tick": 0,
+    "frame": 0,
+    "epoch": 0,
+    "timestamp": "1970-01-01T00:00:00Z",
+    "delta": 0,
+    "elapsed": 0,
+    "rate": 1.0
+  },
+  "state": {
+    "mode": "nominal",
+    "health": 100,
+    "energy": 100,
+    "load": 0,
+    "temperature": 0,
+    "pressure": 0,
+    "entropy": 0,
+    "stability": 1.0
+  },
+  "memory": {
+    "stable": {
+      "facts": [],
+      "rules": [],
+      "schemas": []
+    },
+    "working": {
+      "buffer": [],
+      "context": [],
+      "attention": []
+    },
+    "episodic": [
+      {
+        "id": "ep-0",
+        "time": 0,
+        "summary": "",
+        "payload": {}
+      }
+    ],
+    "semantic": {
+      "concepts": [],
+      "relations": [],
+      "ontologies": []
+    },
+    "latent": {
+      "dimensions": [],
+      "embeddings": [],
+      "weights": []
+    }
+  },
+  "entities": {
+    "root": {
+      "type": "node",
+      "subtype": "generic",
+      "state": "active",
+      "position": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "scale": {
+        "x": 1,
+        "y": 1,
+        "z": 1
+      },
+      "velocity": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "acceleration": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      },
+      "attributes": {
+        "mass": 0,
+        "charge": 0,
+        "priority": 0
+      },
+      "metrics": {
+        "score": 0,
+        "confidence": 0,
+        "utilization": 0
+      },
+      "telemetry": {
+        "rx": 0,
+        "tx": 0,
+        "latency": 0
+      },
+      "flags": {
+        "visible": true,
+        "selected": false,
+        "locked": false
+      },
+      "signals": [],
+      "events": []
+    }
+  },
+  "relationships": [
+    {
+      "id": "rel-0",
+      "source": "root",
+      "target": "root",
+      "type": "self",
+      "strength": 0,
+      "weight": 0,
+      "state": "active",
+      "attributes": {}
+    }
+  ],
+  "signals": [
+    {
+      "id": "sig-0",
+      "source": "root",
+      "target": "root",
+      "type": "data",
+      "value": 0,
+      "velocity": 0,
+      "direction": "none",
+      "state": "idle"
+    }
+  ],
+  "events": [
+    {
+      "id": "evt-0",
+      "time": 0,
+      "type": "startup",
+      "severity": "info",
+      "state": "open",
+      "payload": {}
+    }
+  ],
+  "anomalies": [
+    {
+      "id": "anom-0",
+      "type": "none",
+      "severity": 0,
+      "confidence": 0,
+      "state": "inactive"
+    }
+  ],
+  "metrics": {
+    "throughput": 0,
+    "latency": 0,
+    "fps": 0,
+    "memory": 0,
+    "cpu": 0,
+    "gpu": 0,
+    "bandwidth": 0
+  },
+  "telemetry": {
+    "ingress": 0,
+    "egress": 0,
+    "packets": 0,
+    "errors": 0,
+    "drops": 0,
+    "retries": 0
+  },
+  "topology": {
+    "nodes": [
+      "root"
+    ],
+    "edges": [
+      "rel-0"
+    ],
+    "degree": 0,
+    "diameter": 0,
+    "density": 0
+  },
+  "network": {
+    "peers": [],
+    "routes": [],
+    "channels": [],
+    "connections": 0,
+    "availability": 1.0
+  },
+  "continuity": {
+    "generation": 0,
+    "checkpoint": 0,
+    "snapshot": "",
+    "rollback": false
+  },
+  "lineage": {
+    "parent": "",
+    "ancestors": [],
+    "descendants": [],
+    "forks": [],
+    "merges": []
+  },
+  "reasoning": {
+    "active_problem": "",
+    "current_objective": "",
+    "next_action": "",
+    "active_context": [],
+    "active_nodes": [],
+    "active_edges": [],
+    "attention": {},
+    "weights": {},
+    "confidence": {},
+    "hypotheses": [],
+    "predictions": []
+  },
+  "goals": [
+    {
+      "id": "goal-0",
+      "name": "",
+      "priority": 0,
+      "progress": 0,
+      "state": "pending"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-0",
+      "name": "",
+      "owner": "",
+      "progress": 0,
+      "state": "queued"
+    }
+  ],
+  "agents": [
+    {
+      "id": "agent-0",
+      "role": "generic",
+      "state": "idle",
+      "load": 0,
+      "confidence": 0
+    }
+  ],
+  "vectors": [
+    {
+      "id": "vec-0",
+      "dimensions": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "magnitude": 0,
+      "direction": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "clusters": [
+    {
+      "id": "cluster-0",
+      "members": [],
+      "centroid": [
+        0,
+        0,
+        0
+      ],
+      "weight": 0
+    }
+  ],
+  "regions": [
+    {
+      "id": "region-0",
+      "bounds": {
+        "min": [
+          0,
+          0,
+          0
+        ],
+        "max": [
+          0,
+          0,
+          0
+        ]
+      },
+      "density": 0
+    }
+  ],
+  "layers": [
+    {
+      "id": "layer-0",
+      "name": "default",
+      "visible": true,
+      "opacity": 1.0,
+      "order": 0
+    }
+  ],
+  "views": [
+    {
+      "id": "view-0",
+      "name": "main",
+      "mode": "perspective",
+      "active": true
+    }
+  ],
+  "projections": [
+    {
+      "id": "proj-0",
+      "source": "root",
+      "target": "scene",
+      "type": "graph"
+    }
+  ],
+  "scene": {
+    "nodes": [],
+    "edges": [],
+    "clusters": [],
+    "regions": [],
+    "flows": [],
+    "paths": [],
+    "overlays": [],
+    "widgets": []
+  },
+  "animation": {
+    "active": [],
+    "transitions": [],
+    "timelines": [],
+    "emitters": [],
+    "particles": [],
+    "speed": 1.0,
+    "playing": true
+  },
+  "render": {
+    "camera": {
+      "position": [
+        0,
+        0,
+        10
+      ],
+      "rotation": [
+        0,
+        0,
+        0
+      ],
+      "fov": 60,
+      "near": 0.1,
+      "far": 1000
+    },
+    "viewport": {
+      "width": 1920,
+      "height": 1080,
+      "scale": 1
+    },
+    "selection": {
+      "ids": []
+    },
+    "focus": {
+      "id": "root"
+    },
+    "visibility": {
+      "culling": true
+    },
+    "highlighting": {
+      "ids": []
+    },
+    "layers": {
+      "enabled": [
+        "layer-0"
+      ]
+    }
+  },
+  "output": {
+    "current_state": {},
+    "next_state": {},
+    "expected_state": {},
+    "artifacts": []
+  },
+  "debug": {
+    "logs": [],
+    "trace": [],
+    "events": [],
+    "statistics": {
+      "warnings": 0,
+      "errors": 0
+    }
+  }
+}

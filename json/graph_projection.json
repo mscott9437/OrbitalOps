@@ -1,0 +1,306 @@
+{
+"projection_type": "graph",
+"widget_tree": {
+"root": {
+"type": "panel",
+"children": [
+{
+"type": "header",
+"title": "ORBITALOPS GRAPH COMMAND CENTER"
+},
+
+    {
+      "type": "metric_strip",
+      "metrics": [
+        { "label": "NODES", "value": "1" },
+        { "label": "EDGES", "value": "1" },
+        { "label": "CLUSTERS", "value": "1" },
+        { "label": "REGIONS", "value": "1" },
+        { "label": "CONNECTIVITY", "value": "100%" },
+        { "label": "GRAPH STATUS", "value": "ACTIVE" }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "GRAPH OVERVIEW"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "graph": {
+              "root_node": "root",
+              "node_count": 1,
+              "edge_count": 1,
+              "density": 0,
+              "diameter": 0,
+              "availability": 1.0,
+              "active_projection": "graph"
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "NODE REGISTRY"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "root": {
+              "id": "entity-0000",
+              "name": "root",
+              "type": "runtime",
+              "state": "active",
+              "confidence": 1.0,
+              "utilization": 0
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "RELATIONSHIP MATRIX"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Source","Target","Type","State"],
+            ["root","root","self","active"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "SIGNAL FLOWS"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "signals": [
+              {
+                "id": "sig-0",
+                "source": "root",
+                "target": "root",
+                "type": "data",
+                "state": "idle"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "TOPOLOGY METRICS"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Metric","Value"],
+            ["Nodes","1"],
+            ["Edges","1"],
+            ["Degree","0"],
+            ["Diameter","0"],
+            ["Density","0"],
+            ["Availability","100%"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "CLUSTER ANALYSIS"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "clusters": [
+              {
+                "id": "cluster-0",
+                "members": ["root"],
+                "weight": 1.0,
+                "state": "stable"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "REGION ANALYSIS"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "regions": [
+              {
+                "id": "region-0",
+                "density": 0,
+                "active_nodes": 1,
+                "classification": "global"
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "NETWORK MAP"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "network": {
+              "connections": 0,
+              "availability": 1.0,
+              "peers": [],
+              "routes": [],
+              "channels": []
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "GRAPH EVENTS"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Time","Event","Severity"],
+            ["0","startup","info"],
+            ["1","projection_load","info"],
+            ["2","graph_initialize","info"],
+            ["3","topology_stable","info"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "PATH EXPLORER"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "paths": [
+              {
+                "source": "root",
+                "target": "root",
+                "length": 0,
+                "reachable": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "RENDER PROJECTION"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "camera": {
+              "position": [0,0,10],
+              "fov": 60
+            },
+            "viewport": {
+              "width": 1920,
+              "height": 1080
+            },
+            "focus": {
+              "id": "root"
+            },
+            "selection": {
+              "ids": []
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "GRAPH SNAPSHOT"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "entities": 1,
+            "relationships": 1,
+            "signals": 1,
+            "clusters": 1,
+            "regions": 1,
+            "projections": 1,
+            "continuity": {
+              "generation": 0,
+              "checkpoint": 0
+            },
+            "lineage": {
+              "forks": 0,
+              "merges": 0
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+
+}
+}

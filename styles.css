@@ -1,0 +1,514 @@
+:root {
+  --bg: #0d1117;
+  --panel-bg: #161b22;
+  --panel-border: #30363d;
+  --panel-border-hover: #58a6ff;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #58a6ff;
+  --tree-bg: #0b1220;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    ui-monospace,
+    SFMono-Regular,
+    Menlo,
+    Monaco,
+    Consolas,
+    monospace;
+  padding: 20px;
+  line-height: 1.4;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: var(--accent);
+}
+
+h2,
+h3,
+h4 {
+  margin-top: 0;
+}
+
+/* -------------------- */
+/* Navigation */
+/* -------------------- */
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+nav a {
+  color: var(--accent);
+  text-decoration: none;
+  padding: 6px 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+nav a:hover {
+  color: white;
+  border-color: var(--accent);
+  background: rgba(88,166,255,.08);
+}
+
+/* -------------------- */
+/* Global Layout */
+/* -------------------- */
+
+#projection {
+  width: 100%;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid var(--panel-border);
+  margin: 20px 0;
+}
+
+/* -------------------- */
+/* Panels */
+/* -------------------- */
+
+.panel {
+  background: var(--panel-bg);
+  border: 1px solid var(--panel-border);
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  transition:
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.panel:hover {
+  border-color: var(--panel-border-hover);
+}
+
+.header {
+  border-bottom: 1px solid var(--panel-border);
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+}
+
+.header h2 {
+  margin: 0;
+  color: var(--accent);
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* -------------------- */
+/* Text */
+/* -------------------- */
+
+.text {
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* -------------------- */
+/* Metrics */
+/* -------------------- */
+
+.metric-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.metric {
+  min-width: 140px;
+  background: #0f1722;
+  border: 1px solid var(--panel-border);
+  border-radius: 6px;
+  padding: 12px;
+}
+
+.metric div:first-child {
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.metric div:last-child {
+  margin-top: 6px;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+/* -------------------- */
+/* Tables */
+/* -------------------- */
+
+.table-view {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-view td {
+  padding: 8px;
+  border-bottom: 1px solid #222c36;
+}
+
+.table-view tr:first-child td {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+/* -------------------- */
+/* Tree Views */
+/* -------------------- */
+
+.tree-view {
+  background: var(--tree-bg);
+  border: 1px solid #1f2937;
+  border-radius: 6px;
+  padding: 12px;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  color: #9cdcfe;
+}
+
+/* -------------------- */
+/* Master Tree */
+/* -------------------- */
+
+.node {
+  margin-left: 20px;
+  border-left: 1px solid var(--panel-border);
+  padding-left: 10px;
+}
+
+.leaf {
+  display: flex;
+  gap: 10px;
+  margin: 2px 0;
+}
+
+.key {
+  color: var(--accent);
+}
+
+.value {
+  color: var(--text);
+}
+
+/* -------------------- */
+/* Schema View */
+/* -------------------- */
+
+.panel-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns:
+    repeat(
+      auto-fill,
+      minmax(320px,1fr)
+    );
+}
+
+/* -------------------- */
+/* Unknown Widget */
+/* -------------------- */
+
+.unknown-widget {
+  border: 1px solid #ff6b6b;
+  color: #ff6b6b;
+  padding: 12px;
+}
+
+/* -------------------- */
+/* Projection-Specific */
+/* -------------------- */
+
+.projection-master {
+}
+
+.projection-executive {
+}
+
+.projection-derived {
+}
+
+/* ===================================================== */
+/* DERIVED PROJECTION :: PHASE 2 MISSION CONTROL LAYOUT  */
+/* ===================================================== */
+
+.projection-derived
+.panel[data-panel-id="derived-root"]
+{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+}
+
+/* ----------------------------------------------------- */
+/* Mission Header */
+/* ----------------------------------------------------- */
+
+.projection-derived
+.panel[data-panel-id="derived-root"]
+> .header
+{
+  background:#111827;
+
+  border:1px solid var(--accent);
+
+  border-radius:8px;
+
+  padding:20px;
+
+  margin-bottom:0;
+}
+
+.projection-derived
+.panel[data-panel-id="derived-root"]
+> .header h2
+{
+  font-size:24px;
+  letter-spacing:.15em;
+  text-align:center;
+}
+
+/* ----------------------------------------------------- */
+/* Top Metrics */
+/* ----------------------------------------------------- */
+
+.projection-derived
+.panel[data-panel-id="derived-root"]
+> .metric-strip:first-of-type
+{
+  margin-bottom:0;
+}
+
+/* ----------------------------------------------------- */
+/* Main Dashboard Layout */
+/* ----------------------------------------------------- */
+
+.projection-derived
+.panel[data-panel-id="mission-layout"]
+{
+  display:grid;
+
+  grid-template-columns:
+    320px
+    minmax(800px,1fr)
+    320px;
+
+  gap:16px;
+
+  background:none;
+  border:none;
+  padding:0;
+  margin:0;
+}
+
+/* ----------------------------------------------------- */
+/* Column Containers */
+/* ----------------------------------------------------- */
+
+.projection-derived
+.panel[data-panel-id="left-sidebar"]
+{
+  display:flex;
+  flex-direction:column;
+
+  background:none;
+  border:none;
+  padding:0;
+  margin:0;
+}
+
+.projection-derived
+.panel[data-panel-id="center-column"]
+{
+  display:flex;
+  flex-direction:column;
+
+  background:none;
+  border:none;
+  padding:0;
+  margin:0;
+}
+
+.projection-derived
+.panel[data-panel-id="right-sidebar"]
+{
+  display:flex;
+  flex-direction:column;
+
+  background:none;
+  border:none;
+  padding:0;
+  margin:0;
+}
+
+/* ----------------------------------------------------- */
+/* Mission Theater */
+/* ----------------------------------------------------- */
+
+.projection-derived
+.panel[data-panel-id="mission-theater"]
+{
+  min-height:700px;
+
+  background:
+    linear-gradient(
+      180deg,
+      #172033,
+      #0f1722
+    );
+
+  border-color:#58a6ff;
+}
+
+/* ----------------------------------------------------- */
+/* Footer Metrics */
+/* ----------------------------------------------------- */
+
+.projection-derived
+.panel[data-panel-id="derived-root"]
+> .metric-strip:last-of-type
+{
+  margin-bottom:0;
+}
+
+/* ----------------------------------------------------- */
+/* Mission Control Styling */
+/* ----------------------------------------------------- */
+
+.projection-derived .panel
+{
+  box-shadow:
+    inset 0 0 0 1px rgba(88,166,255,.05),
+    0 0 10px rgba(0,0,0,.25);
+}
+
+.projection-derived .header h2
+{
+  color:#7dc4ff;
+}
+
+.projection-derived .metric
+{
+  background:#101a2b;
+}
+
+.projection-derived .tree-view
+{
+  min-height:160px;
+}
+
+/* ----------------------------------------------------- */
+/* Remove panel chrome from layout containers */
+/* ----------------------------------------------------- */
+
+.projection-derived
+.panel[data-panel-id="mission-layout"],
+.projection-derived
+.panel[data-panel-id="left-sidebar"],
+.projection-derived
+.panel[data-panel-id="center-column"],
+.projection-derived
+.panel[data-panel-id="right-sidebar"]
+{
+  box-shadow:none;
+}
+
+/* ----------------------------------------------------- */
+/* Responsive */
+/* ----------------------------------------------------- */
+
+@media (max-width:1600px)
+{
+  .projection-derived
+  .panel[data-panel-id="mission-layout"]
+  {
+    grid-template-columns:
+      280px
+      minmax(600px,1fr)
+      280px;
+  }
+}
+
+@media (max-width:1200px)
+{
+  .projection-derived
+  .panel[data-panel-id="mission-layout"]
+  {
+    display:block;
+  }
+}
+
+/* ===================================== */
+/* CANVAS VIEW                           */
+/* ===================================== */
+
+.canvas-view
+{
+  width:100%;
+  height:100%;
+}
+
+.canvas-view canvas
+{
+  display:block;
+
+  width:100%;
+  height:100%;
+
+  background:#050b12;
+
+  border:1px solid #1f2937;
+
+  border-radius:8px;
+}
+
+/* ===================================== */
+/* THEATRE                               */
+/* ===================================== */
+
+.projection-theatre
+.panel[data-panel-id="theatre-root"]
+{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+.projection-theatre
+.panel[data-panel-id="theatre-canvas"]
+{
+  min-height:80vh;
+}
+
+.projection-theatre
+.panel[data-panel-id="theatre-canvas"]
+.canvas-view
+{
+  height:70vh;
+}

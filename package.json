@@ -7,10 +7,6 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "docs": "hugo server",
-    "docs:build": "hugo",
-    "bootstrap": "node bootstrap-runtime.mjs",
-    "generate:scaffold": "node tools/scaffold-generator.mjs"
   },
   "dependencies": {
     "react": "^18.3.1",

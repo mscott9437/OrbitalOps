@@ -1,0 +1,294 @@
+{
+  "projection_type": "vector",
+  "widget_tree": {
+    "root": {
+      "type": "panel",
+      "children": [
+
+        {
+          "type": "header",
+          "title": "ORBITALOPS VECTOR COMMAND CENTER"
+        },
+
+        {
+          "type": "metric_strip",
+          "metrics": [
+            { "label": "VECTOR HEALTH", "value": "100%" },
+            { "label": "EMBEDDINGS", "value": "4096" },
+            { "label": "COLLECTIONS", "value": "32" },
+            { "label": "CLUSTERS", "value": "16" },
+            { "label": "RECALL SCORE", "value": "98%" },
+            { "label": "STATUS", "value": "ONLINE" }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "VECTOR OVERVIEW"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "vector_runtime": {
+                  "state": "active",
+                  "embedding_dimensions": 4096,
+                  "collections": 32,
+                  "clusters": 16,
+                  "index_state": "healthy"
+                }
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "EMBEDDING REGISTRY"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "embedding_sets": [
+                  {
+                    "id": "emb-001",
+                    "type": "semantic",
+                    "dimensions": 4096,
+                    "status": "active"
+                  },
+                  {
+                    "id": "emb-002",
+                    "type": "entity",
+                    "dimensions": 4096,
+                    "status": "active"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "VECTOR COLLECTIONS"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Collection","Vectors","State"],
+                ["semantic","2048","active"],
+                ["entities","1024","active"],
+                ["memory","512","active"],
+                ["topology","512","active"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "SIMILARITY ENGINE"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "similarity_metric": "cosine",
+                "average_similarity": 0.91,
+                "threshold": 0.80,
+                "candidate_pool": 4096,
+                "active_queries": 4
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "SEMANTIC NEIGHBORHOODS"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "neighborhoods": [
+                  {
+                    "id": "cluster-001",
+                    "members": 128,
+                    "cohesion": 0.94
+                  },
+                  {
+                    "id": "cluster-002",
+                    "members": 96,
+                    "cohesion": 0.89
+                  }
+                ]
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "CLUSTER ANALYSIS"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Cluster","Members","Density"],
+                ["cluster-001","128","0.94"],
+                ["cluster-002","96","0.89"],
+                ["cluster-003","84","0.87"],
+                ["cluster-004","72","0.85"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "INDEX PERFORMANCE"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Metric","Value"],
+                ["Lookup Time","2ms"],
+                ["Nearest Neighbor","1ms"],
+                ["Recall Accuracy","98%"],
+                ["Precision","97%"],
+                ["Cache Hit Rate","94%"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "RETRIEVAL ACTIVITY"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "queries_per_second": 32,
+                "retrievals": 1024,
+                "matches": 998,
+                "cache_hits": 964,
+                "cache_misses": 60
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "VECTOR EVENTS"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Time","Event","Severity"],
+                ["00:01","embedding_load","info"],
+                ["00:02","index_build","info"],
+                ["00:03","similarity_query","info"],
+                ["00:04","retrieval_complete","info"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "VECTOR LINEAGE"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "generation": 32,
+                "checkpoint": 32,
+                "embedding_versions": 8,
+                "index_versions": 4,
+                "continuity": "preserved"
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "VECTOR DIAGNOSTICS"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Check","Result"],
+                ["Embedding Store","PASS"],
+                ["Similarity Engine","PASS"],
+                ["Cluster Manager","PASS"],
+                ["Index Service","PASS"],
+                ["Retrieval Service","PASS"],
+                ["Continuity","PASS"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "VECTOR SNAPSHOT"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "embeddings": 4096,
+                "collections": 32,
+                "clusters": 16,
+                "recall_score": 0.98,
+                "lookup_time_ms": 2,
+                "status": "healthy",
+                "continuity": {
+                  "generation": 32,
+                  "checkpoint": 32
+                }
+              }
+            }
+          ]
+        }
+
+      ]
+    }
+  }
+}

@@ -1,0 +1,308 @@
+{
+"projection_type": "render",
+"widget_tree": {
+"root": {
+"type": "panel",
+"children": [
+
+    {
+      "type": "header",
+      "title": "ORBITALOPS RENDER COMMAND CENTER"
+    },
+
+    {
+      "type": "metric_strip",
+      "metrics": [
+        { "label": "RENDER STATUS", "value": "ONLINE" },
+        { "label": "ACTIVE VIEWS", "value": "1" },
+        { "label": "LAYERS", "value": "1" },
+        { "label": "PROJECTIONS", "value": "1" },
+        { "label": "FRAME TIME", "value": "8ms" },
+        { "label": "PIPELINE", "value": "ACTIVE" }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "RENDER OVERVIEW"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "render_state": {
+              "active_projection": "render",
+              "active_view": "main",
+              "status": "active",
+              "pipeline": "online",
+              "focus": "root"
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "CAMERA SYSTEM"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "camera": {
+              "position": [0,0,10],
+              "rotation": [0,0,0],
+              "fov": 60,
+              "near": 0.1,
+              "far": 1000
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "VIEWPORT STATE"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "viewport": {
+              "width": 1920,
+              "height": 1080,
+              "scale": 1,
+              "aspect_ratio": "16:9"
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "ACTIVE PROJECTIONS"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Projection","Source","Target","State"],
+            ["proj-0","root","scene","active"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "VIEW REGISTRY"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "views": [
+              {
+                "id": "view-0",
+                "name": "main",
+                "mode": "perspective",
+                "active": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "LAYER STACK"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "layers": [
+              {
+                "id": "layer-0",
+                "name": "default",
+                "visible": true,
+                "opacity": 1.0,
+                "order": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "SCENE COMPOSITION"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "scene": {
+              "nodes": 1,
+              "edges": 1,
+              "clusters": 1,
+              "regions": 1,
+              "flows": 0,
+              "paths": 0,
+              "widgets": 0
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "VISIBILITY & HIGHLIGHTING"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "visibility": {
+              "culling": true
+            },
+            "highlighting": {
+              "ids": []
+            },
+            "selection": {
+              "ids": []
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "RENDER PERFORMANCE"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Metric","Value"],
+            ["Frame Time","8 ms"],
+            ["FPS","120"],
+            ["Visible Nodes","1"],
+            ["Visible Edges","1"],
+            ["Render Queue","0"],
+            ["Dropped Frames","0"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "OUTPUT ARTIFACTS"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "artifacts": [
+              {
+                "id": "artifact-0",
+                "type": "projection",
+                "status": "generated"
+              }
+            ],
+            "current_state": {},
+            "next_state": {},
+            "expected_state": {}
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "RENDER DIAGNOSTICS"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Check","Result"],
+            ["Pipeline","PASS"],
+            ["Camera","PASS"],
+            ["Viewport","PASS"],
+            ["Projection","PASS"],
+            ["Scene","PASS"],
+            ["Output","PASS"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "RENDER SNAPSHOT"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "camera": {
+              "fov": 60
+            },
+            "viewport": {
+              "width": 1920,
+              "height": 1080
+            },
+            "scene": {
+              "nodes": 1,
+              "edges": 1
+            },
+            "render": {
+              "status": "healthy"
+            },
+            "continuity": {
+              "generation": 0,
+              "checkpoint": 0
+            }
+          }
+        }
+      ]
+    }
+
+  ]
+}
+
+}
+}

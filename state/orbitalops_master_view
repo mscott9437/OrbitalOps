@@ -1,0 +1,527 @@
+ORBITALOPS :: MASTER MISSION VIEW
+
+══════════════════════════════════════════════════════════════════════════════
+
+IDENTITY
+══════════════════════════════════════════════════════════════════════════════
+
+Runtime:
+OrbitalOps_Demo
+
+Simulation ID:
+DEMO-CONSTELLATION-001
+
+Mission Name:
+OrbitalOps Executive Demo
+
+Scenario:
+Solar Storm Response
+
+Environment:
+deterministic_demo
+
+══════════════════════════════════════════════════════════════════════════════
+
+RUNTIME
+══════════════════════════════════════════════════════════════════════════════
+
+Timestamp:
+T+61s
+
+Phase:
+SOLAR_EVENT_ACTIVE
+
+State:
+OPERATIONAL_DEGRADED
+
+══════════════════════════════════════════════════════════════════════════════
+
+LINEAGE
+══════════════════════════════════════════════════════════════════════════════
+
+Generation:
+61
+
+Checkpoint:
+checkpoint-t61
+
+Parent:
+checkpoint-t60
+
+Root:
+checkpoint-t00
+
+Branch:
+main
+
+Replayable:
+true
+
+══════════════════════════════════════════════════════════════════════════════
+
+MISSION
+══════════════════════════════════════════════════════════════════════════════
+
+Overall Health:
+91.5%
+
+Continuity Status:
+PRESERVED
+
+Autonomous Response:
+ACTIVE
+
+Mission Impact:
+MINIMAL
+
+══════════════════════════════════════════════════════════════════════════════
+
+CONTINUITY ASSESSMENT
+══════════════════════════════════════════════════════════════════════════════
+
+Continuity Integrity:
+PRESERVED
+
+Mission Continuity Score:
+91.5%
+
+Reconstruction Confidence:
+100%
+
+Replayability:
+VERIFIED
+
+══════════════════════════════════════════════════════════════════════════════
+
+STABLE MEMORY
+══════════════════════════════════════════════════════════════════════════════
+
+Mission Type:
+distributed_orbital_operations
+
+Topology:
+
+36 Satellites
+4 Relays
+4 Ground Stations
+
+Continuity Principle:
+maintain_operations_under_degradation
+
+══════════════════════════════════════════════════════════════════════════════
+
+WORKING MEMORY
+══════════════════════════════════════════════════════════════════════════════
+
+Active Problem:
+relay_bravo_signal_degradation
+
+Current Objective:
+preserve_connectivity_during_solar_event
+
+Next Action:
+reroute_affected_satellites
+
+══════════════════════════════════════════════════════════════════════════════
+
+SPACE WEATHER EVENT
+══════════════════════════════════════════════════════════════════════════════
+
+Event Type:
+SOLAR_RADIATION_SURGE
+
+Status:
+ACTIVE
+
+Severity:
+HIGH
+
+Detected:
+T+55
+
+Estimated Duration:
+240 Seconds
+
+Radiation Index:
+8.7
+
+Affected Region:
+MID-EARTH ORBITAL BAND
+
+══════════════════════════════════════════════════════════════════════════════
+
+CONSTELLATION SUMMARY
+══════════════════════════════════════════════════════════════════════════════
+
+Satellites Total:
+36
+
+Healthy:
+32
+
+Degraded:
+4
+
+Offline:
+0
+
+Relays Total:
+4
+
+Healthy:
+3
+
+Degraded:
+1
+
+Ground Stations:
+4
+
+Healthy Ground Stations:
+4
+
+══════════════════════════════════════════════════════════════════════════════
+
+NETWORK METRICS
+══════════════════════════════════════════════════════════════════════════════
+
+Network Health:
+91.5%
+
+Link Quality:
+91%
+
+Throughput:
+14.2 Gbps
+
+Average Latency:
+184 ms
+
+Packets Routed:
+2,341,892
+
+Packets Received:
+2,360,114
+
+Packets Sent:
+2,339,271
+
+Dropped Packets:
+18,123
+
+Rerouted Packets:
+48,991
+
+Packet Loss:
+2.1%
+
+══════════════════════════════════════════════════════════════════════════════
+
+FLEET TELEMETRY
+══════════════════════════════════════════════════════════════════════════════
+
+Average Battery:
+92%
+
+Average Temperature:
+31°C
+
+Average CPU:
+44%
+
+Average Signal Strength:
+88%
+
+══════════════════════════════════════════════════════════════════════════════
+
+RELAY NETWORK
+══════════════════════════════════════════════════════════════════════════════
+
+Relay Alpha
+
+Status:
+HEALTHY
+
+Utilization:
+67%
+
+────────────────────────────────────────────────────────────────────────────
+
+Relay Bravo
+
+Status:
+DEGRADED
+
+Utilization:
+94%
+
+Anomaly:
+SIGNAL_DEGRADATION
+
+Severity:
+HIGH
+
+────────────────────────────────────────────────────────────────────────────
+
+Relay Charlie
+
+Status:
+HEALTHY
+
+Utilization:
+78%
+
+────────────────────────────────────────────────────────────────────────────
+
+Relay Delta
+
+Status:
+HEALTHY
+
+Utilization:
+72%
+
+══════════════════════════════════════════════════════════════════════════════
+
+SATELLITE FLEET
+══════════════════════════════════════════════════════════════════════════════
+
+SAT-12
+
+Status:
+DEGRADED
+
+Battery:
+93%
+
+Temperature:
+44°C
+
+CPU:
+58%
+
+Signal:
+63%
+
+Current Relay:
+Relay_Bravo
+
+Target Relay:
+Relay_Charlie
+
+Anomaly:
+SIGNAL_NOISE_SPIKE
+
+────────────────────────────────────────────────────────────────────────────
+
+SAT-17
+
+Status:
+DEGRADED
+
+Battery:
+89%
+
+Temperature:
+47°C
+
+CPU:
+61%
+
+Signal:
+59%
+
+Current Relay:
+Relay_Bravo
+
+Target Relay:
+Relay_Charlie
+
+Anomaly:
+RADIATION_INTERFERENCE
+
+────────────────────────────────────────────────────────────────────────────
+
+SAT-18
+
+Status:
+DEGRADED
+
+Battery:
+92%
+
+Temperature:
+45°C
+
+CPU:
+55%
+
+Signal:
+61%
+
+Current Relay:
+Relay_Bravo
+
+Target Relay:
+Relay_Delta
+
+Anomaly:
+PACKET_LOSS
+
+────────────────────────────────────────────────────────────────────────────
+
+SAT-23
+
+Status:
+DEGRADED
+
+Battery:
+91%
+
+Temperature:
+48°C
+
+CPU:
+63%
+
+Signal:
+56%
+
+Current Relay:
+Relay_Bravo
+
+Target Relay:
+Relay_Delta
+
+Anomaly:
+LINK_DEGRADATION
+
+══════════════════════════════════════════════════════════════════════════════
+
+TOPOLOGY
+══════════════════════════════════════════════════════════════════════════════
+
+CURRENT ROUTING
+
+SAT-12 → Relay_Bravo
+SAT-17 → Relay_Bravo
+SAT-18 → Relay_Bravo
+SAT-23 → Relay_Bravo
+
+AUTONOMOUS REROUTE PLAN
+
+SAT-12 → Relay_Charlie
+SAT-17 → Relay_Charlie
+SAT-18 → Relay_Delta
+SAT-23 → Relay_Delta
+
+══════════════════════════════════════════════════════════════════════════════
+
+ACTIVE ANOMALIES
+══════════════════════════════════════════════════════════════════════════════
+
+Relay_Bravo
+SIGNAL_DEGRADATION
+HIGH
+
+SAT-12
+SIGNAL_NOISE_SPIKE
+
+SAT-17
+RADIATION_INTERFERENCE
+
+SAT-18
+PACKET_LOSS
+
+SAT-23
+LINK_DEGRADATION
+
+SOLAR_RADIATION_SURGE
+ACTIVE
+
+══════════════════════════════════════════════════════════════════════════════
+
+EVENT FEED
+══════════════════════════════════════════════════════════════════════════════
+
+T+55 SPACE_WEATHER_ALERT
+
+T+56 SOLAR_RADIATION_SURGE_CONFIRMED
+
+T+58 RELAY_BRAVO_SIGNAL_DEGRADATION
+
+T+59 SAT_12_SIGNAL_NOISE_SPIKE
+
+T+59 SAT_17_RADIATION_INTERFERENCE
+
+T+60 SAT_18_PACKET_LOSS
+
+T+60 SAT_23_LINK_DEGRADATION
+
+T+61 AUTONOMOUS_RECOVERY_INITIATED
+
+══════════════════════════════════════════════════════════════════════════════
+
+SEMANTIC DELTA
+══════════════════════════════════════════════════════════════════════════════
+
+Added
+
+• solar_event_detected
+• relay_bravo_degraded
+• four_satellites_degraded
+• autonomous_recovery_started
+
+Modified
+
+• network_health
+• latency
+• route_assignments
+
+Resolved
+
+• none
+
+══════════════════════════════════════════════════════════════════════════════
+
+AUTONOMOUS RESPONSE ENGINE
+══════════════════════════════════════════════════════════════════════════════
+
+Status:
+ACTIVE
+
+Current Action:
+ROUTE_RECALCULATION
+
+Progress:
+46%
+
+Expected Completion:
+T+68
+
+══════════════════════════════════════════════════════════════════════════════
+
+OUTPUT CONTRACT
+══════════════════════════════════════════════════════════════════════════════
+
+Next Expected State:
+AUTONOMOUS_REROUTE_IN_PROGRESS
+
+══════════════════════════════════════════════════════════════════════════════
+
+UPDATE REQUIREMENTS
+══════════════════════════════════════════════════════════════════════════════
+
+advance_timeline
+
+update_telemetry
+
+update_network_health
+
+update_event_feed
+
+update_semantic_delta
+
+emit_complete_packet
+
+══════════════════════════════════════════════════════════════════════════════

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OrbitalOps Executive Mission View</title>
+<style>
+body{font-family:Arial,sans-serif;background:#0b1020;color:#e8eefc;margin:0;padding:20px}
+.screen{max-width:1600px;margin:auto}
+.section{border:1px solid #2a3558;padding:12px;margin-bottom:12px;border-radius:8px}
+.title{font-size:28px;font-weight:bold}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.card{border:1px solid #32406a;padding:10px;border-radius:6px}
+.label{display:block;font-size:12px;opacity:.7}
+.value{display:block;font-size:18px;font-weight:bold}
+.row{display:flex;gap:20px;flex-wrap:wrap}
+.item{flex:1 1 220px}
+.event{padding:4px 0;border-bottom:1px solid #24304f}
+</style>
+</head>
+<body>
+<div class="screen">
+
+<div class="section">
+<div class="title">ORBITALOPS :: EXECUTIVE MISSION VIEW</div>
+<span>Mission: OrbitalOps Executive Demo</span><br>
+<span>Scenario: Solar Storm Response</span><br>
+<span>Simulation ID: DEMO-CONSTELLATION-001</span>
+</div>
+
+<div class="section grid">
+<div class="card"><span class="label">Phase</span><span class="value">SOLAR_EVENT_ACTIVE</span></div>
+<div class="card"><span class="label">State</span><span class="value">OPERATIONAL_DEGRADED</span></div>
+<div class="card"><span class="label">Overall Health</span><span class="value">91.5%</span></div>
+<div class="card"><span class="label">Continuity</span><span class="value">PRESERVED</span></div>
+</div>
+
+<div class="section">
+<h2>Mission Continuity</h2>
+<div class="row">
+<div class="item"><span class="label">Checkpoint</span><span class="value">checkpoint-t61</span></div>
+<div class="item"><span class="label">Parent</span><span class="value">checkpoint-t60</span></div>
+<div class="item"><span class="label">Root</span><span class="value">checkpoint-t00</span></div>
+<div class="item"><span class="label">Recovery Progress</span><span class="value">46%</span></div>
+</div>
+</div>
+
+<div class="section">
+<h2>Space Weather Event</h2>
+<div class="row">
+<div class="item"><span class="label">Event</span><span class="value">SOLAR_RADIATION_SURGE</span></div>
+<div class="item"><span class="label">Severity</span><span class="value">HIGH</span></div>
+<div class="item"><span class="label">Radiation Index</span><span class="value">8.7</span></div>
+<div class="item"><span class="label">Orbital Band</span><span class="value">MID-EARTH</span></div>
+</div>
+</div>
+
+<div class="section">
+<h2>Network Status</h2>
+<div class="grid">
+<div class="card"><span class="label">Network Health</span><span class="value">91.5%</span></div>
+<div class="card"><span class="label">Throughput</span><span class="value">14.2 Gbps</span></div>
+<div class="card"><span class="label">Latency</span><span class="value">184 ms</span></div>
+<div class="card"><span class="label">Packet Loss</span><span class="value">2.1%</span></div>
+<div class="card"><span class="label">Packets Routed</span><span class="value">2,341,892</span></div>
+<div class="card"><span class="label">Packets Received</span><span class="value">2,360,114</span></div>
+<div class="card"><span class="label">Packets Sent</span><span class="value">2,339,271</span></div>
+<div class="card"><span class="label">Rerouted Packets</span><span class="value">48,991</span></div>
+</div>
+</div>
+
+<div class="section">
+<h2>Relay Network</h2>
+<div class="grid">
+<div class="card"><span class="value">Relay Alpha</span><span>HEALTHY • 67%</span></div>
+<div class="card"><span class="value">Relay Bravo</span><span>DEGRADED • 94% • SIGNAL_DEGRADATION</span></div>
+<div class="card"><span class="value">Relay Charlie</span><span>HEALTHY • 78%</span></div>
+<div class="card"><span class="value">Relay Delta</span><span>HEALTHY • 72%</span></div>
+</div>
+</div>
+
+<div class="section">
+<h2>Affected Satellites</h2>
+<div class="grid">
+<div class="card"><span class="value">SAT-12</span><span>Signal Noise Spike | Bravo → Charlie | Battery 93%</span></div>
+<div class="card"><span class="value">SAT-17</span><span>Radiation Interference | Bravo → Charlie | Battery 89%</span></div>
+<div class="card"><span class="value">SAT-18</span><span>Packet Loss | Bravo → Delta | Battery 92%</span></div>
+<div class="card"><span class="value">SAT-23</span><span>Link Degradation | Bravo → Delta | Battery 91%</span></div>
+</div>
+</div>
+
+<div class="section">
+<h2>Event Timeline</h2>
+<div class="event"><span>T+55 SPACE_WEATHER_ALERT</span></div>
+<div class="event"><span>T+56 SOLAR_RADIATION_SURGE_CONFIRMED</span></div>
+<div class="event"><span>T+58 RELAY_BRAVO_SIGNAL_DEGRADATION</span></div>
+<div class="event"><span>T+59 SAT_12_SIGNAL_NOISE_SPIKE</span></div>
+<div class="event"><span>T+59 SAT_17_RADIATION_INTERFERENCE</span></div>
+<div class="event"><span>T+60 SAT_18_PACKET_LOSS</span></div>
+<div class="event"><span>T+60 SAT_23_LINK_DEGRADATION</span></div>
+<div class="event"><span>T+61 AUTONOMOUS_RECOVERY_INITIATED</span></div>
+</div>
+
+<div class="section">
+<h2>Semantic Delta</h2>
+<div><span>Added: solar_event_detected, relay_bravo_degraded, four_satellites_degraded, autonomous_recovery_started</span></div>
+<div><span>Modified: network_health, latency, route_assignments</span></div>
+</div>
+
+</div>
+</body>
+</html>

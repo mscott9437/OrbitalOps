@@ -1,0 +1,303 @@
+{
+  "projection_type": "system",
+  "widget_tree": {
+    "root": {
+      "type": "panel",
+      "children": [
+
+        {
+          "type": "header",
+          "title": "ORBITALOPS SYSTEM COMMAND CENTER"
+        },
+
+        {
+          "type": "metric_strip",
+          "metrics": [
+            { "label": "SYSTEM HEALTH", "value": "100%" },
+            { "label": "SERVICES", "value": "8" },
+            { "label": "PROCESSES", "value": "16" },
+            { "label": "CHECKPOINTS", "value": "32" },
+            { "label": "UPTIME", "value": "99.99%" },
+            { "label": "STATUS", "value": "ONLINE" }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "SYSTEM OVERVIEW"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "runtime": {
+                  "id": "orbitalops",
+                  "state": "active",
+                  "mode": "operational",
+                  "version": "1.0",
+                  "uptime": "continuous"
+                }
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "SERVICE REGISTRY"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Service","State","Health"],
+                ["executive","active","100%"],
+                ["graph","active","100%"],
+                ["memory","active","100%"],
+                ["network","active","100%"],
+                ["reasoning","active","100%"],
+                ["render","active","100%"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "PROCESS REGISTRY"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "processes": [
+                  {
+                    "id": "proc-001",
+                    "name": "runtime_loader",
+                    "state": "running"
+                  },
+                  {
+                    "id": "proc-002",
+                    "name": "projection_engine",
+                    "state": "running"
+                  },
+                  {
+                    "id": "proc-003",
+                    "name": "render_pipeline",
+                    "state": "running"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "RESOURCE MONITOR"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Resource","Usage"],
+                ["CPU","12%"],
+                ["Memory","28%"],
+                ["Storage","14%"],
+                ["Bandwidth","4%"],
+                ["GPU","0%"],
+                ["Cache","18%"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "SUBSYSTEM HEALTH"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "executive": "healthy",
+                "graph": "healthy",
+                "memory": "healthy",
+                "network": "healthy",
+                "reasoning": "healthy",
+                "render": "healthy",
+                "continuity": "healthy"
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "LIFECYCLE STATE"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "boot": "complete",
+                "initialization": "complete",
+                "runtime": "active",
+                "synchronization": "active",
+                "shutdown": "pending"
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "CONTINUITY ENGINE"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "generation": 32,
+                "checkpoint": 32,
+                "branches": 4,
+                "merges": 2,
+                "replay_state": "verified",
+                "continuity": "preserved"
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "CHECKPOINT REGISTRY"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Checkpoint","State"],
+                ["cp-028","verified"],
+                ["cp-029","verified"],
+                ["cp-030","verified"],
+                ["cp-031","verified"],
+                ["cp-032","active"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "CONFIGURATION STATE"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "runtime_mode": "operational",
+                "projection_mode": "active",
+                "replay_mode": "enabled",
+                "lineage_mode": "preserved",
+                "debug_mode": false
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "SYSTEM EVENTS"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Time","Event","Severity"],
+                ["00:00","runtime_boot","info"],
+                ["00:01","schema_load","info"],
+                ["00:02","projection_init","info"],
+                ["00:03","service_sync","info"],
+                ["00:04","system_ready","info"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "SYSTEM DIAGNOSTICS"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Check","Result"],
+                ["Runtime","PASS"],
+                ["Services","PASS"],
+                ["Resources","PASS"],
+                ["Continuity","PASS"],
+                ["Storage","PASS"],
+                ["Network","PASS"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "SYSTEM SNAPSHOT"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "runtime": {
+                  "state": "active"
+                },
+                "services": {
+                  "count": 8
+                },
+                "resources": {
+                  "cpu": "12%",
+                  "memory": "28%"
+                },
+                "continuity": {
+                  "generation": 32,
+                  "checkpoint": 32
+                },
+                "health": "healthy"
+              }
+            }
+          ]
+        }
+
+      ]
+    }
+  }
+}

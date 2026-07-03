@@ -1,0 +1,226 @@
+{
+"projection_type": "executive",
+"widget_tree": {
+"root": {
+"type": "panel",
+"children": [
+
+    {
+      "type": "header",
+      "title": "ORBITALOPS EXECUTIVE OVERLAY"
+    },
+
+    {
+      "type": "metric_strip",
+      "metrics": [
+        { "label": "SYSTEM HEALTH", "value": "100%" },
+        { "label": "OPERATIONAL STATUS", "value": "NOMINAL" },
+        { "label": "NETWORK STATUS", "value": "OPTIMAL" },
+        { "label": "SECURITY", "value": "SECURE" },
+        { "label": "STABILITY", "value": "1.00" },
+        { "label": "ENTROPY", "value": "0" }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "GLOBAL TOPOLOGY OVERVIEW"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "nodes": 1,
+            "edges": 1,
+            "clusters": 0,
+            "regions": 0,
+            "focused_entity": "root",
+            "network_availability": "100%",
+            "topology_density": "0%",
+            "root": {
+              "id": "entity-0000",
+              "name": "root",
+              "status": "active",
+              "classification": "runtime",
+              "instance": "primary"
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "REAL-TIME METRICS"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Metric","Value"],
+            ["Throughput","0 ops/s"],
+            ["Latency","0 ms"],
+            ["FPS","0"],
+            ["Memory","0 MB"],
+            ["CPU","0%"],
+            ["GPU","0%"],
+            ["Bandwidth","0 bps"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "ALERTS & ANOMALIES"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Severity","Count"],
+            ["Critical","0"],
+            ["Warning","0"],
+            ["Info","0"],
+            ["Resolved","0"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "SYSTEM IDENTITY"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "id": "entity-0000",
+            "name": "root",
+            "type": "runtime",
+            "instance": "primary",
+            "namespace": "global",
+            "status": "active"
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "MISSION & OBJECTIVES"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "active_goals": [
+              {
+                "id": "goal-0",
+                "status": "pending",
+                "progress": 0
+              }
+            ],
+            "active_tasks": [
+              {
+                "id": "task-0",
+                "status": "queued",
+                "progress": 0
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "EVENT FEED"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "timestamp": "1970-01-01T00:00:00Z",
+            "event": "startup",
+            "severity": "info",
+            "summary": "System startup complete"
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "TELEMETRY STREAMS"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "ingress": 0,
+            "egress": 0,
+            "packets": 0,
+            "errors": 0,
+            "drops": 0,
+            "retries": 0
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "EXECUTIVE SNAPSHOT"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "simulation": {
+              "scenario": "baseline",
+              "environment": "synthetic",
+              "phase": "initialize",
+              "state": "running"
+            },
+            "continuity": {
+              "generation": 0,
+              "checkpoint": 0,
+              "rollback": false
+            },
+            "render": {
+              "viewport": {
+                "width": 1920,
+                "height": 1080
+              },
+              "focus": {
+                "id": "root"
+              }
+            }
+          }
+        }
+      ]
+    }
+
+  ]
+}
+
+}
+}

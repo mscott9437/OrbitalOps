@@ -1,0 +1,289 @@
+{
+"projection_type": "reasoning",
+"widget_tree": {
+"root": {
+"type": "panel",
+"children": [
+
+    {
+      "type": "header",
+      "title": "ORBITALOPS REASONING COMMAND CENTER"
+    },
+
+    {
+      "type": "metric_strip",
+      "metrics": [
+        { "label": "REASONING STATUS", "value": "ACTIVE" },
+        { "label": "OBJECTIVES", "value": "4" },
+        { "label": "HYPOTHESES", "value": "12" },
+        { "label": "PREDICTIONS", "value": "8" },
+        { "label": "CONFIDENCE", "value": "94%" },
+        { "label": "ATTENTION LOAD", "value": "72%" }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "REASONING OVERVIEW"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "active_problem": "projection_synthesis",
+            "current_objective": "generate_reasoning_projection",
+            "next_action": "evaluate_reasoning_state",
+            "reasoning_mode": "analytical",
+            "status": "active"
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "ACTIVE OBJECTIVES"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "objectives": [
+              {
+                "id": "obj-001",
+                "priority": "high",
+                "state": "active",
+                "progress": 85
+              },
+              {
+                "id": "obj-002",
+                "priority": "high",
+                "state": "active",
+                "progress": 72
+              },
+              {
+                "id": "obj-003",
+                "priority": "medium",
+                "state": "pending",
+                "progress": 24
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "HYPOTHESIS REGISTRY"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Hypothesis","Confidence","State"],
+            ["projection_valid","0.97","active"],
+            ["schema_consistent","0.95","active"],
+            ["renderer_compatible","0.99","verified"],
+            ["topology_stable","0.91","active"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "PREDICTION ENGINE"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "predictions": [
+              {
+                "id": "pred-001",
+                "event": "successful_render",
+                "confidence": 0.99
+              },
+              {
+                "id": "pred-002",
+                "event": "projection_expansion",
+                "confidence": 0.94
+              }
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "ATTENTION ALLOCATION"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "attention": {
+              "reasoning": 1.0,
+              "memory": 0.92,
+              "projection": 0.89,
+              "graph": 0.78,
+              "network": 0.64
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "CONTEXT ACTIVATION"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "active_context": [
+              "projection_generation",
+              "ui_synthesis",
+              "runtime_state",
+              "renderer_constraints",
+              "schema_analysis"
+            ],
+            "context_depth": 8,
+            "working_sets": 4
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "INFERENCE CHAIN"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "pipeline": [
+              "observe",
+              "analyze",
+              "hypothesize",
+              "evaluate",
+              "predict",
+              "decide",
+              "project"
+            ],
+            "active_stage": "project"
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "CONFIDENCE MODEL"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Domain","Confidence"],
+            ["Projection","0.99"],
+            ["Schema","0.97"],
+            ["Topology","0.94"],
+            ["Network","0.91"],
+            ["Memory","0.96"],
+            ["Continuity","0.98"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "DECISION LOG"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Time","Decision","Result"],
+            ["00:01","expand_projection","success"],
+            ["00:02","evaluate_schema","success"],
+            ["00:03","validate_structure","success"],
+            ["00:04","generate_output","success"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "REASONING LINEAGE"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "generation": 16,
+            "checkpoint": 16,
+            "branches": 4,
+            "merges": 2,
+            "lineage_state": "verified",
+            "continuity": "preserved"
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "REASONING SNAPSHOT"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "reasoning": {
+              "active_problem": "projection_synthesis",
+              "objective": "renderer_ready_projection"
+            },
+            "hypotheses": 12,
+            "predictions": 8,
+            "confidence": 0.94,
+            "attention_load": 0.72,
+            "status": "healthy"
+          }
+        }
+      ]
+    }
+
+  ]
+}
+
+}
+}

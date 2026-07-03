@@ -1,0 +1,2 @@
+docker run -d --name master-state-server -p 155.138.202.79:3000:8080 master-state-server
+doas docker build -t master-state-server .

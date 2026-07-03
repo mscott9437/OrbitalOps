@@ -1,13 +1,77 @@
-
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OrbitalOps Canonical Runtime</title>
+   <meta charset="utf-8">
+   <meta name="description" content="index">
+   <link rel="stylesheet" href="styles.css">
+   <script src="main.js" defer></script>
+   <title>Main</title>
 </head>
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.jsx"></script>
+<script>
+  const state = await fetch("/").then(r => r.json());
+
+  renderNode(document.body, state);
+
+  function renderNode(parent, value, key = "")
+  {
+    const container = document.createElement("div");
+
+    container.className = "node";
+
+    if (typeof value !== "object" || value === null)
+    {
+      container.textContent =
+        `${key}: ${value}`;
+
+      parent.appendChild(container);
+      return;
+    }
+
+    const title = document.createElement("h4");
+
+    title.textContent = key;
+
+    container.appendChild(title);
+
+    for (const [k,v] of Object.entries(value))
+    {
+      renderNode(container, v, k);
+    }
+
+    parent.appendChild(container);
+  }
+
+  function randomize(obj)
+  {
+    for (const key in obj)
+    {
+      const value = obj[key];
+
+      if (typeof value === "number")
+      {
+        obj[key] +=
+          (Math.random() - 0.5);
+      }
+
+      else if (
+        typeof value === "object" &&
+        value !== null
+      )
+      {
+        randomize(value);
+      }
+    }
+  }
+
+  function tick()
+  {
+    randomize(masterState);
+
+    rerender();
+
+    requestAnimationFrame(tick);
+  }
+</script>
 </body>
 </html>

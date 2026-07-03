@@ -1,0 +1,174 @@
+
+# DC Remote Server
+
+Invoke-Command { Install-ADDSDomainController -DomainName contoso.com -Credential (Get-Credential) } -ComputerName ConDC3
+
+# Forest with delegation
+
+Install-ADDSForest -DomainName corp.contoso.com -CreateDNSDelegation -DomainMode Win2008 -ForestMode Win2025 -DatabasePath "d:\NTDS" -SYSVOLPath "d:\SYSVOL" -LogPath "e:\Logs"
+
+# Child or tree domain
+
+Install-ADDSDomain -SafeModeAdministratorPassword -Credential (get-credential corp\EnterpriseAdmin1) -NewDomainName child -ParentDomainName corp.contoso.com -InstallDNS -CreateDNSDelegation -DomainMode Win2025 -ReplicationSourceDC DC1.corp.contoso.com -SiteName Houston -DatabasePath "d:\NTDS" -SYSVOLPath "d:\SYSVOL" -LogPath "e:\Logs" -Confirm:$False
+
+# OpenSSH system-wide config file location
+
+%programdata%\ssh\sshd_config
+
+# User config file
+
+C:\Users\username\.ssh\
+
+# Authorized keys file location
+
+%programdata%/ssh/administrators_authorized_keys
+
+# Set default shell to PowerShell for SSH sessions
+
+$NewItemPropertyParams = @{
+    Path         = "HKLM:\SOFTWARE\OpenSSH"
+    Name         = "DefaultShell"
+    Value        = "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+    PropertyType = "String"
+    Force        = $true
+}
+New-ItemProperty @NewItemPropertyParams
+
+# samples
+
+# local users
+AllowUsers localuser@192.168.2.23
+AllowGroups sshusers
+
+# domain users
+DenyUsers tesla\admin@192.168.2.23
+DenyUsers tesla\*
+AllowGroups tesla\sshusers tesla\serveroperators
+
+# GSSAPI config example
+
+# Specify a set of configuration arguments for a host matching the
+# pattern SERVER01.contoso.com.
+#
+# Patterns are case sensitive.
+Host SERVER01.contoso.com
+    # Enables GSSAPI authentication.
+    GSSAPIAuthentication yes
+    # Forward (delegate) credentials to the server.
+    GSSAPIDelegateCredentials yes
+
+# Generate public/private keys (default Ed25519 algorithm)
+
+ssh-keygen
+
+# Use ECDSA
+
+ssh-keygen -t ecdsa
+
+# Add key to Windows security context
+
+# By default, the ssh-agent service is disabled. Configure it to start automatically.
+# Run the following command as an administrator.
+Get-Service ssh-agent | Set-Service -StartupType Automatic
+
+# Start the service.
+Start-Service ssh-agent
+
+# The following command should return a status of Running.
+Get-Service ssh-agent
+
+# Load your key files into ssh-agent.
+ssh-add $env:USERPROFILE\.ssh\id_ecdsa
+
+# Upload public key for standard user
+
+# Get the public key file generated previously on your client.
+$authorizedKey = Get-Content -Path $env:USERPROFILE\.ssh\id_ecdsa.pub
+
+# Generate the PowerShell command to run remotely that copies the public key file generated previously on your client to the authorized_keys file on your server.
+$remotePowershell = "powershell New-Item -Force -ItemType Directory -Path $env:USERPROFILE\.ssh; Add-Content -Force -Path $env:USERPROFILE\.ssh\authorized_keys -Value '$authorizedKey'"
+
+# Connect to your server and run the PowerShell command by using the $remotePowerShell variable.
+ssh username@domain1@contoso.com $remotePowershell
+
+# Upload public key for administrative user
+
+# Get the public key file generated previously on your client.
+$authorizedKey = Get-Content -Path $env:USERPROFILE\.ssh\id_ecdsa.pub
+
+# Generate the PowerShell command to run remotely that copies the public key file generated previously on your client to the authorized_keys file on your server.
+$remotePowershell = "powershell Add-Content -Force -Path $env:ProgramData\ssh\administrators_authorized_keys -Value '''$authorizedKey''';icacls.exe ""$env:ProgramData\ssh\administrators_authorized_keys"" /inheritance:r /grant ""Administrators:F"" /grant ""SYSTEM:F"""
+
+# Connect to your server and run the PowerShell command by using the $remotePowerShell variable.
+ssh username@domain1@contoso.com $remotePowershell
+
+# Install Azure Arc PowerShell module
+
+Install-Module -Name Az.ConnectedMachine
+
+# Sign into Azure
+
+Connect-AzAccount
+
+# Install agent and connect to Azure
+
+Connect-AzConnectedMachine -ResourceGroupName myResourceGroup -Name myMachineName -Location <region>
+
+# Connect via proxy
+
+Connect-AzConnectedMachine -ResourceGroupName myResourceGroup -Name myMachineName -Location <region> -Proxy http://<proxyURL>:<proxyport>
+
+# Install remotely
+
+$sessions = New-PSSession -ComputerName myMachineName
+Connect-AzConnectedMachine -ResourceGroupName myResourceGroup -Location <region> -PSSession $sessions
+
+# Install on multiple remote machines
+
+$sessions = New-PSSession -ComputerName myMachineName1, myMachineName2, myMachineName3
+Connect-AzConnectedMachine -ResourceGroupName myResourceGroup -Location <region> -PSSession $sessions
+
+# Install Azure Kubernetes PowerShell Module
+
+Install-Module -Name Az.ConnectedKubernetes
+
+# Register providers for Arc-enabled Kubernetes
+
+Register-AzResourceProvider -ProviderNamespace Microsoft.Kubernetes
+Register-AzResourceProvider -ProviderNamespace Microsoft.KubernetesConfiguration
+Register-AzResourceProvider -ProviderNamespace Microsoft.ExtendedLocation
+
+Get-AzResourceProvider -ProviderNamespace Microsoft.Kubernetes
+Get-AzResourceProvider -ProviderNamespace Microsoft.KubernetesConfiguration
+Get-AzResourceProvider -ProviderNamespace Microsoft.ExtendedLocation
+
+# Create resource group
+
+New-AzResourceGroup -Name AzureArcTest -Location EastUS
+
+# Connect Kubernetes Cluster
+
+New-AzConnectedKubernetes -ClusterName AzureArcTest1 -ResourceGroupName AzureArcTest -Location eastus
+
+# Connect using outbound proxy
+
+# set on deployment machine
+$Env:HTTP_PROXY = "<proxy-server-ip-address>:<port>"
+$Env:HTTPS_PROXY = "<proxy-server-ip-address>:<port>"
+$Env:NO_PROXY = "<cluster-apiserver-ip-address>:<port>"
+
+# set on kubernetes cluster
+New-AzConnectedKubernetes -ClusterName <cluster-name> -ResourceGroupName <resource-group> -Location eastus -Proxy 'https://<proxy-server-ip-address>:<port>'
+New-AzConnectedKubernetes -ClusterName AzureArcTest1 -ResourceGroupName AzureArcTest -Location eastus
+
+# Verify cluster connection
+
+Get-AzConnectedKubernetes -ResourceGroupName AzureArcTest
+
+# View deployment
+
+kubectl get deployments,pods -n azure-arc
+
+# Clean up resources
+
+Remove-AzConnectedKubernetes -ClusterName AzureArcTest1 -ResourceGroupName AzureArcTest

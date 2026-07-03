@@ -1,0 +1,296 @@
+{
+"projection_type": "memory",
+"widget_tree": {
+"root": {
+"type": "panel",
+"children": [
+
+    {
+      "type": "header",
+      "title": "ORBITALOPS MEMORY COMMAND CENTER"
+    },
+
+    {
+      "type": "metric_strip",
+      "metrics": [
+        { "label": "MEMORY HEALTH", "value": "100%" },
+        { "label": "FACTS", "value": "128" },
+        { "label": "CONCEPTS", "value": "64" },
+        { "label": "EPISODES", "value": "32" },
+        { "label": "ATTENTION", "value": "ACTIVE" },
+        { "label": "RECALL STATUS", "value": "ONLINE" }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "MEMORY OVERVIEW"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "memory": {
+              "stable": 128,
+              "working": 24,
+              "episodic": 32,
+              "semantic": 64,
+              "latent": 256,
+              "status": "active"
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "STABLE MEMORY"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "facts": [
+              "runtime_active",
+              "projection_system_online",
+              "continuity_preserved"
+            ],
+            "rules": [
+              "preserve_lineage",
+              "maintain_continuity",
+              "validate_projection"
+            ],
+            "schemas": [
+              "master_state",
+              "ui_schema",
+              "projection_schema"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "WORKING MEMORY"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "active_context": [
+              "memory_projection",
+              "projection_generation",
+              "renderer_compatibility"
+            ],
+            "buffer_size": 24,
+            "focus_depth": 8,
+            "attention_state": "high"
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "EPISODIC MEMORY"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Episode","Time","Summary"],
+            ["ep-001","0","runtime_boot"],
+            ["ep-002","1","schema_loaded"],
+            ["ep-003","2","projection_initialized"],
+            ["ep-004","3","memory_projection_loaded"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "SEMANTIC MEMORY"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "concepts": [
+              "runtime",
+              "projection",
+              "continuity",
+              "lineage",
+              "memory",
+              "graph"
+            ],
+            "relations": [
+              "projection->runtime",
+              "memory->continuity",
+              "graph->topology"
+            ],
+            "ontologies": [
+              "orbitalops_core"
+            ]
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "LATENT MEMORY"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "embedding_dimensions": 4096,
+            "active_embeddings": 256,
+            "vector_groups": 32,
+            "weight_sets": 16,
+            "compression_ratio": 0.82
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "ATTENTION SYSTEM"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "active_focus": [
+              "memory",
+              "executive",
+              "graph"
+            ],
+            "attention_weights": {
+              "memory": 1.0,
+              "projection": 0.94,
+              "runtime": 0.88
+            }
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "MEMORY ACCESS LOG"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Time","Operation","Status"],
+            ["12:00:01","recall","success"],
+            ["12:00:03","lookup","success"],
+            ["12:00:05","binding","success"],
+            ["12:00:08","projection","success"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "RECALL ANALYTICS"
+        },
+        {
+          "type": "table_view",
+          "rows": [
+            ["Metric","Value"],
+            ["Recall Requests","256"],
+            ["Successful Recall","256"],
+            ["Cache Hits","128"],
+            ["Cache Misses","0"],
+            ["Context Expansions","32"],
+            ["Memory Bindings","512"]
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "MEMORY LINEAGE"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "generation": 16,
+            "checkpoint": 16,
+            "snapshots": 32,
+            "branches": 4,
+            "merges": 2,
+            "continuity_state": "verified"
+          }
+        }
+      ]
+    },
+
+    {
+      "type": "panel",
+      "children": [
+        {
+          "type": "header",
+          "title": "MEMORY SNAPSHOT"
+        },
+        {
+          "type": "tree_view",
+          "data": {
+            "stable_memory": {
+              "facts": 128,
+              "rules": 32,
+              "schemas": 12
+            },
+            "working_memory": {
+              "buffer": 24,
+              "contexts": 8
+            },
+            "semantic_memory": {
+              "concepts": 64,
+              "relations": 128
+            },
+            "latent_memory": {
+              "embeddings": 256
+            },
+            "status": "healthy"
+          }
+        }
+      ]
+    }
+
+  ]
+}
+
+}
+}

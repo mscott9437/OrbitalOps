@@ -1,0 +1,305 @@
+{
+  "projection_type": "telemetry",
+  "widget_tree": {
+    "root": {
+      "type": "panel",
+      "children": [
+
+        {
+          "type": "header",
+          "title": "ORBITALOPS TELEMETRY COMMAND CENTER"
+        },
+
+        {
+          "type": "metric_strip",
+          "metrics": [
+            { "label": "TELEMETRY HEALTH", "value": "100%" },
+            { "label": "EVENTS", "value": "1024" },
+            { "label": "SIGNALS", "value": "256" },
+            { "label": "STREAMS", "value": "16" },
+            { "label": "LATENCY", "value": "4ms" },
+            { "label": "STATUS", "value": "ONLINE" }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "TELEMETRY OVERVIEW"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "telemetry": {
+                  "status": "active",
+                  "streams": 16,
+                  "signals": 256,
+                  "events": 1024,
+                  "retention": "enabled"
+                }
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "LIVE EVENT STREAM"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Timestamp","Event","Severity"],
+                ["12:00:01","runtime_tick","info"],
+                ["12:00:02","projection_sync","info"],
+                ["12:00:03","telemetry_update","info"],
+                ["12:00:04","health_check","info"],
+                ["12:00:05","snapshot_commit","info"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "SIGNAL REGISTRY"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "signals": [
+                  {
+                    "id": "signal-001",
+                    "source": "runtime",
+                    "state": "active",
+                    "frequency": "1hz"
+                  },
+                  {
+                    "id": "signal-002",
+                    "source": "network",
+                    "state": "active",
+                    "frequency": "10hz"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "THROUGHPUT METRICS"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Metric","Value"],
+                ["Events/sec","512"],
+                ["Signals/sec","128"],
+                ["Updates/sec","64"],
+                ["Snapshots/sec","4"],
+                ["Queries/sec","32"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "LATENCY ANALYTICS"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Subsystem","Latency"],
+                ["Runtime","2ms"],
+                ["Memory","3ms"],
+                ["Graph","4ms"],
+                ["Network","5ms"],
+                ["Render","8ms"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "SUBSYSTEM TELEMETRY"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "executive": {
+                  "events": 64,
+                  "health": "healthy"
+                },
+                "memory": {
+                  "events": 128,
+                  "health": "healthy"
+                },
+                "graph": {
+                  "events": 96,
+                  "health": "healthy"
+                },
+                "network": {
+                  "events": 48,
+                  "health": "healthy"
+                },
+                "render": {
+                  "events": 32,
+                  "health": "healthy"
+                }
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "RESOURCE OBSERVABILITY"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Resource","Usage"],
+                ["CPU","12%"],
+                ["Memory","28%"],
+                ["Storage","14%"],
+                ["Network","6%"],
+                ["Cache","18%"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "ANOMALY DETECTION"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "active_alerts": 0,
+                "warnings": 0,
+                "critical": 0,
+                "last_anomaly": null,
+                "health_score": 1.0
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "SNAPSHOT REGISTRY"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Snapshot","State"],
+                ["snap-001","verified"],
+                ["snap-002","verified"],
+                ["snap-003","verified"],
+                ["snap-004","active"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "TELEMETRY INTEGRITY"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "stream_integrity": "verified",
+                "signal_integrity": "verified",
+                "event_integrity": "verified",
+                "retention_integrity": "verified",
+                "continuity_integrity": "verified"
+              }
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "TELEMETRY DIAGNOSTICS"
+            },
+            {
+              "type": "table_view",
+              "rows": [
+                ["Check","Result"],
+                ["Event Stream","PASS"],
+                ["Signal Bus","PASS"],
+                ["Snapshots","PASS"],
+                ["Metrics","PASS"],
+                ["Retention","PASS"],
+                ["Integrity","PASS"]
+              ]
+            }
+          ]
+        },
+
+        {
+          "type": "panel",
+          "children": [
+            {
+              "type": "header",
+              "title": "TELEMETRY SNAPSHOT"
+            },
+            {
+              "type": "tree_view",
+              "data": {
+                "events": 1024,
+                "signals": 256,
+                "streams": 16,
+                "latency": "4ms",
+                "health_score": 1.0,
+                "status": "healthy",
+                "continuity": {
+                  "generation": 32,
+                  "checkpoint": 32
+                }
+              }
+            }
+          ]
+        }
+
+      ]
+    }
+  }
+}
